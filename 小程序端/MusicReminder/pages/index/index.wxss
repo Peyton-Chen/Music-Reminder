@@ -1,0 +1,21 @@
+.about-banner{
+  height: 200px;
+  width: 375px;
+}
+.container{
+text-align:;
+}
+text{
+  display: block;
+}
+image,text{
+  margin-bottom: 10px;
+}
+.modal-input {
+  display: flex;
+  background: rgb(233, 229, 229);
+  border-bottom: 4rpx solid rgb(236, 233, 233);
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  height: 50px;
+}

@@ -1,0 +1,21 @@
+<!--index.wxml-->
+
+<view class='container'>
+<image class='about-banner' src="1.jpg"></image>
+<view style="margin-top:20px;">
+
+<view style="text-align:center;">
+<p style="font-size:22px;">音乐提醒控制系统</p>
+
+  <view style="margin-top:30px;">  <p>设备状态：{{device_status}}</p> </view>
+  <view style="margin-top:30px;">  <p>音乐状态：{{powerstatus}}</p> </view>
+
+    <view style="margin-top:30px;">
+
+  <view style="margin-top:30px;"> <button bindtap="openclick" >音乐播放</button>   </view>
+  <view style="margin-top:30px;"> <button bindtap="closeclick" >音乐关闭</button>   </view>
+    
+    </view>
+</view>
+</view>
+</view>

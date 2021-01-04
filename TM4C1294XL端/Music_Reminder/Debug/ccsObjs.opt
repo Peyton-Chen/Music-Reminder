@@ -1,0 +1,1 @@
+"./main.obj" "./tm4c1294ncpdt_startup_ccs.obj" "./uartstdio.obj" "./ADC/ADC.obj" "./EPIinit/EPIinit.obj" "./I2C/i2c.obj" "./TFTinit/TFT_400x240_OTM4001A_16bit.obj" "./TOUCHinit/TOUCH_TSC2046.obj" "./Tool/KalmanFilter.obj" "../tm4c1294ncpdt.cmd" -llibc.a -l"C:/ti/TivaWare_C_Series-2.1.0.12573/driverlib/ccs/Debug/driverlib.lib" 

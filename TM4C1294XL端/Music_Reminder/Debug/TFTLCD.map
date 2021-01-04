@@ -1,0 +1,380 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.6                      
+******************************************************************************
+>> Linked Sun Sep 14 22:23:22 2014
+
+OUTPUT FILE NAME:   <TFTLCD.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000230d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00002fca  000fd036  R  X
+  SRAM                  20000000   00040000  00000258  0003fda8  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002fd0   00002fd0    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    000024fe   000024fe    r-x .text
+  00002708    00002708    00000884   00000884    r-- .const
+  00002f90    00002f90    00000040   00000040    r-- .cinit
+20000000    20000000    00000258   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    00000034   00000000    rw- .bss
+  20000234    20000234    00000024   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.text      0    00000208    000024fe     
+                  00000208    00000f58     TFT_400x240_OTM4001A_16bit.obj (.text)
+                  00001160    0000049c     uartstdio.obj (.text)
+                  000015fc    000003d0     TOUCH_TSC2046.obj (.text)
+                  000019cc    0000025c     TFT_test.obj (.text)
+                  00001c28    000001fc     driverlib.lib : sysctl.obj (.text:SysCtlClockFreqSet)
+                  00001e24    00000144     EPIinit.obj (.text)
+                  00001f68    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00002098    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00002134    00000094                                   : auto_init.obj (.text)
+                  000021c8    0000005e                                   : copy_decompress_rle.obj (.text)
+                  00002226    00000056     driverlib.lib : gpio.obj (.text:GPIOIntTypeSet)
+                  0000227c    00000048                   : gpio.obj (.text:GPIOPinConfigure)
+                  000022c4    00000048                   : sysctl.obj (.text:_SysCtlFrequencyGet)
+                  0000230c    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00002354    00000044                                   : cpy_tbl.obj (.text)
+                  00002398    00000044                                   : exit.obj (.text)
+                  000023dc    00000042     driverlib.lib : ssi.obj (.text:SSIConfigSetExpClk)
+                  0000241e    00000042     rtsv7M4_T_le_v4SPD16_eabi.lib : u_divt2.obj (.text)
+                  00002460    00000040     driverlib.lib : uart.obj (.text:UARTConfigSetExpClk)
+                  000024a0    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  000024d4    00000034                   : sysctl.obj (.text:SysCtlPeripheralPresent)
+                  00002508    0000002a                   : gpio.obj (.text:GPIODirModeSet)
+                  00002532    00000022                   : epi.obj (.text:EPIConfigHB16Set)
+                  00002554    0000001c                   : sysctl.obj (.text:SysCtlGPIOAHBEnable)
+                  00002570    0000001c                   : uart.obj (.text:UARTDisable)
+                  0000258c    0000001c                   : sysctl.obj (.text:_SysCtlMemTimingGet)
+                  000025a8    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000025c0    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  000025d8    00000014     driverlib.lib : uart.obj (.text:UARTEnable)
+                  000025ec    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00002600    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeEPI)
+                  00002612    00000012                   : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  00002624    00000012                   : gpio.obj (.text:GPIOPinTypeSSI)
+                  00002636    00000012                   : gpio.obj (.text:GPIOPinTypeUART)
+                  00002648    00000012                   : ssi.obj (.text:SSIDataGetNonBlocking)
+                  0000265a    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  0000266c    00000010     driverlib.lib : fpu.obj (.text:FPUEnable)
+                  0000267c    00000010                   : fpu.obj (.text:FPULazyStackingEnable)
+                  0000268c    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000269a    0000000c     driverlib.lib : gpio.obj (.text:GPIOIntEnable)
+                  000026a6    0000000c                   : ssi.obj (.text:SSIDataGet)
+                  000026b2    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  000026be    0000000a     driverlib.lib : ssi.obj (.text:SSIDataPut)
+                  000026c8    0000000a                   : ssi.obj (.text:SSIEnable)
+                  000026d2    0000000a                   : uart.obj (.text:UARTCharGet)
+                  000026dc    0000000a                   : uart.obj (.text:UARTCharPut)
+                  000026e6    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  000026ec    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  000026f2    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  000026f8    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  000026fe    00000004     driverlib.lib : epi.obj (.text:EPIAddressMapSet)
+                  00002702    00000004                   : epi.obj (.text:EPIModeSet)
+
+.const     0    00002708    00000884     
+                  00002708    00000600     TFT_400x240_OTM4001A_16bit.obj (.const:asc2_1608)
+                  00002d08    00000120     driverlib.lib : sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  00002e28    00000090                   : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00002eb8    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00002f24    00000030                   : sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  00002f54    0000001c     uartstdio.obj (.const)
+                  00002f70    00000012     uartstdio.obj (.const:.string)
+                  00002f82    00000002     --HOLE-- [fill = 0]
+                  00002f84    00000008     driverlib.lib : sysctl.obj (.const)
+
+.cinit     0    00002f90    00000040     
+                  00002f90    00000017     (.cinit..data.load) [load image, compression = rle]
+                  00002fa7    00000001     --HOLE-- [fill = 0]
+                  00002fa8    0000000c     (__TI_handler_table)
+                  00002fb4    00000004     --HOLE-- [fill = 0]
+                  00002fb8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00002fc0    00000010     (__TI_cinit_table)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000200     --HOLE--
+
+.bss       0    20000200    00000034     UNINITIALIZED
+                  20000200    00000018     (.common:TouchXData)
+                  20000218    00000018     (.common:TouchYData)
+                  20000230    00000004     (.common:g_ui32SysClock)
+
+.data      0    20000234    00000024     UNINITIALIZED
+                  20000234    00000008     TFT_400x240_OTM4001A_16bit.obj (.data)
+                  2000023c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000244    00000008                                   : exit.obj (.data)
+                  2000024c    00000005     uartstdio.obj (.data)
+                  20000251    00000003     --HOLE--
+                  20000254    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002fc0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00002f90, load size=00000017 bytes, run addr=20000234, run size=00000024 bytes, compression=rle
+	.bss: load addr=00002fb8, load size=00000008 bytes, run addr=20000200, run size=00000034 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002fa8 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00002399   C$$EXIT
+000019cd   ConfigureUART
+000026ff   EPIAddressMapSet
+00002533   EPIConfigHB16Set
+00001e25   EPIGPIOinit
+00002703   EPIModeSet
+0000266d   FPUEnable
+0000267d   FPULazyStackingEnable
+00002509   GPIODirModeSet
+0000269b   GPIOIntEnable
+00002227   GPIOIntTypeSet
+00001f69   GPIOPadConfigSet
+0000227d   GPIOPinConfigure
+000026e7   GPIOPinRead
+00002601   GPIOPinTypeEPI
+00002613   GPIOPinTypeGPIOInput
+000025a9   GPIOPinTypeGPIOOutput
+00002625   GPIOPinTypeSSI
+00002637   GPIOPinTypeUART
+000026ed   GPIOPinWrite
+00000295   InitGPIOLCDInterface
+000019b3   IntGPIOb
+000026b3   ResetISR
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+000023dd   SSIConfigSetExpClk
+000026a7   SSIDataGet
+00002649   SSIDataGetNonBlocking
+000026bf   SSIDataPut
+000026c9   SSIEnable
+000015fd   SSIinit
+0000174b   SoftSPI_GetData
+000016cb   SoftSPI_PutData
+00001665   SoftSPIinit
+00001c29   SysCtlClockFreqSet
+000026f3   SysCtlDelay
+00002555   SysCtlGPIOAHBEnable
+000024a1   SysCtlPeripheralEnable
+000024d5   SysCtlPeripheralPresent
+00000e69   TFTLCD_CLEAR
+00000d59   TFTLCD_DrawPoint
+00000353   TFTLCD_EnterSleep
+000003d3   TFTLCD_ExitSleep
+00000ebd   TFTLCD_FillBlock
+00000c8d   TFTLCD_REFRESH_GRAM
+00000ca1   TFTLCD_SetPos
+00000d7b   TFTLCD_ShowChar
+00000f25   TFTLCD_ShowData
+0000102d   TFTLCD_ShowPicture
+00000e0b   TFTLCD_ShowString
+00000489   TFT_400x240_OTM4001Ainit
+00001931   TOUCH_PointAdjust
+000018fd   TOUCH_TSC2046init
+00001697   TouchInit
+20000200   TouchXData
+20000218   TouchYData
+000026d3   UARTCharGet
+000026dd   UARTCharPut
+00002461   UARTConfigSetExpClk
+00002571   UARTDisable
+000025d9   UARTEnable
+00001161   UARTStdioConfig
+000012a7   UARTgetc
+000011ed   UARTgets
+000015c7   UARTprintf
+000012cd   UARTvprintf
+000011a7   UARTwrite
+20000238   WriteCommand
+20000234   WriteData
+20000200   __STACK_END
+00000200   __STACK_SIZE
+20000200   __STACK_TOP
+00002fc0   __TI_CINIT_Base
+00002fd0   __TI_CINIT_Limit
+00002fa8   __TI_Handler_Table_Base
+00002fb4   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00002135   __TI_auto_init
+20000244   __TI_cleanup_ptr
+0000268d   __TI_decompress_none
+000026f9   __TI_decompress_rle24
+20000248   __TI_dtors_ptr
+00000000   __TI_static_base__
+0000265b   __TI_zero_init
+00002099   __aeabi_memcpy
+00002099   __aeabi_memcpy4
+00002099   __aeabi_memcpy8
+0000241f   __aeabi_uidivmod
+ffffffff   __binit__
+ffffffff   __c_args__
+20000000   __stack
+000025c1   _args_main
+0000230d   _c_int00
+2000023c   _lock
+000025fb   _nop
+000025f3   _register_lock
+000025ed   _register_unlock
+20000240   _unlock
+0000239d   abort
+00002708   asc2_1608
+ffffffff   binit
+00002355   copy_in
+000023a5   exit
+00000000   g_pfnVectors
+20000230   g_ui32SysClock
+00001a03   main
+20000254   main_func_sp
+00002099   memcpy
+000017dd   touch_getx
+0000186d   touch_gety
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+00000200   __STACK_SIZE
+00000295   InitGPIOLCDInterface
+00000353   TFTLCD_EnterSleep
+000003d3   TFTLCD_ExitSleep
+00000489   TFT_400x240_OTM4001Ainit
+00000c8d   TFTLCD_REFRESH_GRAM
+00000ca1   TFTLCD_SetPos
+00000d59   TFTLCD_DrawPoint
+00000d7b   TFTLCD_ShowChar
+00000e0b   TFTLCD_ShowString
+00000e69   TFTLCD_CLEAR
+00000ebd   TFTLCD_FillBlock
+00000f25   TFTLCD_ShowData
+0000102d   TFTLCD_ShowPicture
+00001161   UARTStdioConfig
+000011a7   UARTwrite
+000011ed   UARTgets
+000012a7   UARTgetc
+000012cd   UARTvprintf
+000015c7   UARTprintf
+000015fd   SSIinit
+00001665   SoftSPIinit
+00001697   TouchInit
+000016cb   SoftSPI_PutData
+0000174b   SoftSPI_GetData
+000017dd   touch_getx
+0000186d   touch_gety
+000018fd   TOUCH_TSC2046init
+00001931   TOUCH_PointAdjust
+000019b3   IntGPIOb
+000019cd   ConfigureUART
+00001a03   main
+00001c29   SysCtlClockFreqSet
+00001e25   EPIGPIOinit
+00001f69   GPIOPadConfigSet
+00002099   __aeabi_memcpy
+00002099   __aeabi_memcpy4
+00002099   __aeabi_memcpy8
+00002099   memcpy
+00002135   __TI_auto_init
+00002227   GPIOIntTypeSet
+0000227d   GPIOPinConfigure
+0000230d   _c_int00
+00002355   copy_in
+00002399   C$$EXIT
+0000239d   abort
+000023a5   exit
+000023dd   SSIConfigSetExpClk
+0000241f   __aeabi_uidivmod
+00002461   UARTConfigSetExpClk
+000024a1   SysCtlPeripheralEnable
+000024d5   SysCtlPeripheralPresent
+00002509   GPIODirModeSet
+00002533   EPIConfigHB16Set
+00002555   SysCtlGPIOAHBEnable
+00002571   UARTDisable
+000025a9   GPIOPinTypeGPIOOutput
+000025c1   _args_main
+000025d9   UARTEnable
+000025ed   _register_unlock
+000025f3   _register_lock
+000025fb   _nop
+00002601   GPIOPinTypeEPI
+00002613   GPIOPinTypeGPIOInput
+00002625   GPIOPinTypeSSI
+00002637   GPIOPinTypeUART
+00002649   SSIDataGetNonBlocking
+0000265b   __TI_zero_init
+0000266d   FPUEnable
+0000267d   FPULazyStackingEnable
+0000268d   __TI_decompress_none
+0000269b   GPIOIntEnable
+000026a7   SSIDataGet
+000026b3   ResetISR
+000026bf   SSIDataPut
+000026c9   SSIEnable
+000026d3   UARTCharGet
+000026dd   UARTCharPut
+000026e7   GPIOPinRead
+000026ed   GPIOPinWrite
+000026f3   SysCtlDelay
+000026f9   __TI_decompress_rle24
+000026ff   EPIAddressMapSet
+00002703   EPIModeSet
+00002708   asc2_1608
+00002fa8   __TI_Handler_Table_Base
+00002fb4   __TI_Handler_Table_Limit
+00002fc0   __TI_CINIT_Base
+00002fd0   __TI_CINIT_Limit
+20000000   __stack
+20000200   TouchXData
+20000200   __STACK_END
+20000200   __STACK_TOP
+20000218   TouchYData
+20000230   g_ui32SysClock
+20000234   WriteData
+20000238   WriteCommand
+2000023c   _lock
+20000240   _unlock
+20000244   __TI_cleanup_ptr
+20000248   __TI_dtors_ptr
+20000254   main_func_sp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[110 symbols]
