@@ -24,8 +24,8 @@
 #define TCP_SERVER_ADDR "bemfa.com"     //巴法云服务器地址默认即可
 #define TCP_SERVER_PORT "8344"          //服务器端口//TCP创客云端口8344//TCP设备云端口8340
 #define DEFAULT_STASSID  "Mi 10"        //WIFI名称，区分大小写，不要写错
-#define DEFAULT_STAPSW "cpt200406"      //WIFI密码
-String UID = "c7398f49623e1e3706f5e24b6e374c98";  //用户私钥，可在控制台获取,修改为自己的UID
+#define DEFAULT_STAPSW "*****"      //WIFI密码
+String UID = "*************";  //用户私钥，可在控制台获取,修改为自己的UID
 String TOPIC = "MusicReminder";         //主题名字，可在控制台新建
 
 
